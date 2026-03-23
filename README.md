@@ -40,8 +40,7 @@ py aoc <day> <part> test
 
    `days/day08/part1.py`
    ```python
-   def parse(data: str):
-       return data.strip().splitlines()
+   from aoc.utils import parse
 
    def solve(data: str):
        values = parse(data)
@@ -64,7 +63,8 @@ The only contract each solution file must satisfy is defining a `solve(data: str
 ```
 ├── aoc/
 │   ├── __main__.py   # CLI entry point
-│   └── runner.py     # Loads day module and runs the solution
+│   ├── runner.py     # Loads day module and runs the solution
+│   └── utils.py      # Shared utilities (e.g. parse)
 └── days/
     └── dayXX/
         ├── part1.py  # def solve(data: str)
