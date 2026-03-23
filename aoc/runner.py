@@ -5,7 +5,7 @@ _PROJECT_ROOT = Path(__file__).parent.parent
 _DAYS_DIR = _PROJECT_ROOT / "days"
 
 
-def run(day: int, part: int, test: bool = False) -> None:
+def run(day: int, part: int, test_file: str | None = None) -> None:
     day_dir = _DAYS_DIR / f"day{day:02d}"
 
     if not day_dir.exists():
@@ -19,11 +19,11 @@ def run(day: int, part: int, test: bool = False) -> None:
         print(f"  Create the file: days/day{day:02d}/part{part}.py")
         return
 
-    input_filename = "test.txt" if test else "input.txt"
+    input_filename = f"{test_file}.txt" if test_file else "input.txt"
     input_file = day_dir / input_filename
     if not input_file.exists():
         print(f"Error: Input file not found: days/day{day:02d}/{input_filename}")
-        if test:
+        if test_file:
             print("  Create it and paste the sample input from the problem page.")
         else:
             print("  Create it and paste your puzzle input.")
@@ -42,8 +42,8 @@ def run(day: int, part: int, test: bool = False) -> None:
         return
 
     label = f"Day {day}, Part {part}"
-    if test:
-        label += " [TEST]"
+    if test_file:
+        label += f" [{test_file.upper()}]"
     print(label)
     print("-" * len(label))
 

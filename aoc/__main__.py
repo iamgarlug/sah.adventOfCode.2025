@@ -8,9 +8,10 @@ def main():
     args = sys.argv[1:]
 
     if len(args) < 2 or len(args) > 3:
-        print("Usage: py aoc <day> <part> [test]")
+        print("Usage: py aoc <day> <part> [input_file]")
         print("  Example: py aoc 8 1")
         print("  Example: py aoc 8 1 test")
+        print("  Example: py aoc 8 1 test2")
         sys.exit(1)
 
     try:
@@ -24,14 +25,11 @@ def main():
         print("Error: <part> must be 1 or 2.")
         sys.exit(1)
 
-    test = False
+    test_file = None
     if len(args) == 3:
-        if args[2] != "test":
-            print(f"Error: unrecognized argument '{args[2]}'. Did you mean 'test'?")
-            sys.exit(1)
-        test = True
+        test_file = args[2]
 
-    run(day, part, test=test)
+    run(day, part, test_file=test_file)
 
 
 main()
