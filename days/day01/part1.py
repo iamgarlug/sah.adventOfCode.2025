@@ -7,12 +7,12 @@ import math
 from aoc.utils import parse
 
 def solve(data: str):
-    values = parse(data)
+    lines = parse(data)
 
     position = 50
     zeroCount = 0
 
-    for value in values:
+    for value in lines:
         # Process input
         direction = 1 if value[:1] == "R" else -1
         distance = int(value[1:])
