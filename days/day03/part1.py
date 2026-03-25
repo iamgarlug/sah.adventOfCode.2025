@@ -1,15 +1,15 @@
 """
-Advent of Code 2025 — Day 1, Part 1
-https://adventofcode.com/2025/day/1
+Advent of Code 2025 — Day 3, Part 1
+https://adventofcode.com/2025/day/3
 """
 
 from aoc.utils import parse
 
 def solve(data: str):
-    values = parse(data)
+    lines = parse(data)
     result = 0
 
-    for numbers in values:
+    for numbers in lines:
         leftIndex = 0
         leftDigit = 0
         rightIndex = 1
