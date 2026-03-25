@@ -1,4 +1,5 @@
 import importlib.util
+import traceback
 from pathlib import Path
 
 _PROJECT_ROOT = Path(__file__).parent.parent
@@ -51,6 +52,7 @@ def run(day: int, part: int, test_file: str | None = None) -> None:
         result = solve_fn(raw_input)
     except Exception as e:
         print(f"Error during execution: {type(e).__name__}: {e}")
+        traceback.print_exc()
         return
 
     print(f"Answer: {result}")
