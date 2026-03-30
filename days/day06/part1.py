@@ -3,7 +3,6 @@ Advent of Code 2025 — Day 6, Part 1
 https://adventofcode.com/2025/day/6
 """
 
-import math
 from aoc.utils import parse
 
 def solve(data: str):
