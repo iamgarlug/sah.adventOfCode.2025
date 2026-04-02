@@ -5,9 +5,6 @@ https://adventofcode.com/2025/day/6
 
 from aoc.utils import parse
 
-# Appears from the test input that a splitter with splitters to the immediate left and right does not count towards splitting.
-
-
 def solve(data: str):
     lines = parse(data)
     beams = list()
